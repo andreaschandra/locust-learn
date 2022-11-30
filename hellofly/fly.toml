@@ -1,6 +1,6 @@
-# fly.toml file generated for helloflyac on 2022-11-21T21:58:19+07:00
+# fly.toml file generated for simplehello on 2022-11-30T11:31:43+07:00
 
-app = "helloflyac"
+app = "simplehello"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
