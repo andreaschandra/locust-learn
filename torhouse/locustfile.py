@@ -12,4 +12,6 @@ class HelloWorldUser(HttpUser):
 
     @task
     def createuser_json(self):
-        self.client.post("/createuserjson", json={"fullname":"John Doe", "gender":"Male"})
+        self.client.post(
+            "/createuserjson", json={"fullname": "John Doe", "gender": "Male"}
+        )

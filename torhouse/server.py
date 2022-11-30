@@ -7,28 +7,34 @@ app = Flask(__name__)
 def homepage():
     return jsonify({"message": "This is homepage"})
 
-@app.route("/createuser", methods=['GET', 'POST'])
+
+@app.route("/createuser", methods=["GET", "POST"])
 def create_user():
-    if request.method == 'GET':
+    if request.method == "GET":
         return jsonify({"message": "createuser GET"})
     else:
-        return jsonify({
-            "message": "OK",
-            "fullname": request.form['fullname'],
-            "gender": request.form['gender']
-        })
+        return jsonify(
+            {
+                "message": "OK",
+                "fullname": request.form["fullname"],
+                "gender": request.form["gender"],
+            }
+        )
 
-@app.route("/createuserjson", methods=['GET', 'POST'])
+
+@app.route("/createuserjson", methods=["GET", "POST"])
 def create_user_json():
-    if request.method == 'GET':
+    if request.method == "GET":
         return jsonify({"message": "createuser GET"})
     else:
         content = request.json
-        return jsonify({
-            "message": "OK",
-            "fullname": content['fullname'],
-            "gender": content['gender']
-        })
+        return jsonify(
+            {
+                "message": "OK",
+                "fullname": content["fullname"],
+                "gender": content["gender"],
+            }
+        )
 
 
 if __name__ == "__main__":
