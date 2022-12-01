@@ -1,6 +1,10 @@
 import logging
 from flask import Flask, request, jsonify, render_template
 from model import sentclf
+from joblib import load
+
+tfidf = load('model_dev/tfidf.joblib')
+classifier = load('model_dev/model.joblib')
 
 app = Flask(__name__)
 logging.basicConfig(filename='error.log',level=logging.DEBUG)
@@ -47,7 +51,12 @@ def predict():
     else:
         content = request.json
         logging.debug("REVIEW: " + content["review"])
-        label = sentclf(content["review"])
+        # label = sentclf(content["review"])
+
+        review_mat = tfidf.transform([content['review']])
+        labels = classifier.predict(review_mat)
+        label = labels[0]
+        
         return jsonify(
             {
                 "label": label
