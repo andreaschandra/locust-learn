@@ -1,3 +1,5 @@
  curl -X POST http://127.0.0.1:8000/createuser -H "Content-Type: application/x-www-form-urlencoded" -d "fullname=Andreas&gender=Male"
 
  curl -X POST http://127.0.0.1:8000/createuserjson -H "Content-Type: application/json" -d '{"fullname": "Andreas", "gender":"Male"}'
+
+ curl -X POST http://127.0.0.1:8000/predict -H "Content-Type: application/json" -d '{"review": " Halo blibli. Sedikit saran untuk gratis ongkirnya yg minimum 200rb peritem Di ubah jadi minum dr total belanja 200rb. Jd bisa beli produk yg sama dengn jumlah bnyak. Atau pun bisa beli produk yg berbeda dlam jumlah banyak. Sy harap bisa di terapkan Makasih"}'
