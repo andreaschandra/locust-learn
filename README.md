@@ -22,3 +22,5 @@ This directory contains:
 - methods `GET` and `POST`
 - deploy to fly.io
 - locust with distributed requests
+- add docker-compose file
+- add sentiment ml model
