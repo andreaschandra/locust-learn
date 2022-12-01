@@ -1,2 +1,2 @@
 # Modify this Procfile to fit your needs
-web: gunicorn -threads 4 server:app
+web: gunicorn -threads=4 server:app
