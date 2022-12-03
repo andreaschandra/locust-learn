@@ -36,6 +36,6 @@ class HelloWorldUser(HttpUser):
             "aplikasi shoping trhancur yng pernah sya install... verifikasi hp bloon banget",
         ]
 
-        self.client.post("/predict", json={"review": random.choice(reviews)}, timeout=3)
+        self.client.post("/predict", json={"review": random.choice(reviews)}, timeout=1)
 
         time.sleep(2)
