@@ -1,4 +1,5 @@
 import random
+import time
 from locust import HttpUser, task, tag, constant_throughput
 
 
@@ -36,3 +37,5 @@ class HelloWorldUser(HttpUser):
         ]
 
         self.client.post("/predict", json={"review": random.choice(reviews)}, timeout=3)
+
+        time.sleep(2)
